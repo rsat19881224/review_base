@@ -27,7 +27,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'omniauth'
+gem 'omniauth', '<= 1.9.0'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
@@ -40,7 +40,7 @@ gem 'enumerize'
 gem 'gon'
 gem 'nested_form'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '>= 3.0.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
