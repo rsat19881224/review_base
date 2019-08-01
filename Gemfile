@@ -39,8 +39,8 @@ gem 'virtus'
 gem 'enumerize'
 gem 'gon'
 gem 'nested_form'
-gem 'jquery-rails'
-gem 'bootstrap-sass', '>= 3.0.0'
+gem 'bootstrap-sass'
+
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
