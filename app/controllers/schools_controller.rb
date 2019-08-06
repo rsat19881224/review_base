@@ -1,4 +1,8 @@
 class SchoolsController < InheritedResources::Base
+  def index
+    @search = School.search(params[:q])
+    @schools = @search.result
+  end
 
   private
 

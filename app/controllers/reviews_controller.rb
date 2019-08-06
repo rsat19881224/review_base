@@ -1,5 +1,8 @@
 class ReviewsController < InheritedResources::Base
-
+  def index
+    @search = Review.search(params[:q])
+    @reviews = @search.result
+  end
   private
 
     def review_params

@@ -2,7 +2,19 @@
 
 <h1>Reviews</h1>
 
-<table>
+<%= search_form_for @search do |f| %>
+  <div class="form-group">
+    <%= f.label :school_name_cont, "School Name" %>
+    <%= f.text_field :school_name_cont, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_username_cont, "User Name" %>
+    <%= f.text_field :user_username_cont, class: "form-control" %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+<table class="table">
   <thead>
     <tr>
       <th>School</th>
@@ -16,8 +28,8 @@
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.school %></td>
-        <td><%= review.user %></td>
+        <td><%= review.school.name %></td>
+        <td><%= review.user.username %></td>
         <td><%= review.rate %></td>
         <td><%= review.content %></td>
         <td><%= link_to 'Show', review %></td>

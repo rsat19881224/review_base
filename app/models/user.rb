@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable, :timeoutable, :omniauthable, omniauth_providers: [:twitter]
 
+  has_many :reviews
+  has_many :bookmarks
+
   enum role: { admin: 1, manager: 2 }
 
   def self.from_omniauth(auth)
