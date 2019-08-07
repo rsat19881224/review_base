@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require jquery-ui.min
+//= require jquery.tagsinput.min
 //= require_tree .

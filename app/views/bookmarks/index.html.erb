@@ -2,7 +2,7 @@
 
 <h1>Bookmarks</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>User</th>
@@ -14,8 +14,8 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.user %></td>
-        <td><%= bookmark.school %></td>
+        <td><%= bookmark.user.username %></td>
+        <td><%= bookmark.school.name %></td>
         <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
         <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
