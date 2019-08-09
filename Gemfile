@@ -42,7 +42,8 @@ gem 'nested_form'
 gem 'bootstrap-sass'
 gem 'nokogiri'
 gem 'rails-i18n'
-
+gem 'carrierwave'
+gem 'rmagick'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 

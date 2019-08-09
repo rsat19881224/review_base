@@ -25,5 +25,9 @@
   <%= @school.tel %>
 </p>
 
+<% if @school.image? %>
+  <%= image_tag @school.image_url(:thumb) %>
+<% end %>
+
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>

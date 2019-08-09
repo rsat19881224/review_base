@@ -11,24 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :school_id %>
     <%= form.text_field :school_id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rate %>
     <%= form.number_field :rate %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
     <%= form.text_area :content %>
+  </div>
+
+  <div class="form-group">
+    <%= form.fields_for :tags do |tf| %>
+      <%= tf.label :name, "タグ"  %>
+      <%= tf.text_field :name, id:"formTagInput", class:"form-control" %>
+    <% end %>
   </div>
 
   <div class="actions">

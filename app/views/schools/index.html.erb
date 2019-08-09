@@ -13,6 +13,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>image</th>
       <th>Name</th>
       <th>Kana</th>
       <th>Email</th>
@@ -25,6 +26,11 @@
   <tbody>
     <% @schools.each do |school| %>
       <tr>
+        <td>
+          <% if school.image? %>
+            <%= image_tag school.image_url(:thumb) %>
+          <% end %>
+        </td>
         <td><%= school.name %></td>
         <td><%= school.kana %></td>
         <td><%= school.email %></td>

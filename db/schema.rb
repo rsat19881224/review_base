@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_080105) do
+ActiveRecord::Schema.define(version: 2019_08_09_020425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,12 +49,36 @@ ActiveRecord::Schema.define(version: 2019_08_02_080105) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "school_images", force: :cascade do |t|
+    t.bigint "school_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_school_images_on_school_id"
+  end
+
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.string "kana"
     t.string "email"
     t.string "post_code"
     t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "image"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_taggings_on_review_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -93,4 +117,7 @@ ActiveRecord::Schema.define(version: 2019_08_02_080105) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "reviews", "schools"
   add_foreign_key "reviews", "users"
+  add_foreign_key "school_images", "schools"
+  add_foreign_key "taggings", "reviews"
+  add_foreign_key "taggings", "tags"
 end
